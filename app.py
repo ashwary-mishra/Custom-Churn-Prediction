@@ -14,7 +14,6 @@ st.markdown("""
     <style>
     /* Gradient Background Header */
     .hero-container {
-        background: linear-gradient(135deg, #FF6B6B 0%, #556270 100%);
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         padding: 28px;
         border-radius: 18px;
@@ -88,9 +87,9 @@ col1, col2 = st.columns(2, gap="large")
 with col1:
     st.markdown('<div class="card-purple"><h3 style="margin:0; color:#581c87;">👤 Customer Account Details</h3></div>', unsafe_allow_html=True)
     tenure = st.slider("Tenure Duration (Months)", min_value=1, max_value=72, value=18)
-    monthly_charges = st.number_input("Monthly Charges ($)", min_value=20.0, max_value=150.0, value=65.0, step=5.0)
+    monthly_charges = st.number_input("Monthly Charges (₹)", min_value=100.0, max_value=10000.0, value=1500.0, step=100.0)
     total_charges = tenure * monthly_charges
-    st.metric(label="Calculated Lifetime Value ($)", value=f"${total_charges:,.2f}", delta="Active")
+    st.metric(label="Calculated Lifetime Value (₹)", value=f"₹{total_charges:,.2f}", delta="Active")
 
 with col2:
     st.markdown('<div class="card-blue"><h3 style="margin:0; color:#0369a1;">📊 Service Usage & Support</h3></div>', unsafe_allow_html=True)
